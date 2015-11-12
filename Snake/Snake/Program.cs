@@ -14,21 +14,18 @@ namespace Snake
             int y1 = 3;
             char sim1 = '*';
 
-            Draw(x1, y1, sim1);
+            Console.SetCursorPosition(x1, y1);
+            Console.Write(sim1);
 
             int x2 = 4;
             int y2 = 5;
             char sim2 = '#';
 
-            Draw(x2, y2, sim2);
+            Console.SetCursorPosition(x2, y2);
+            Console.Write(sim2);
 
             Console.ReadLine();
         }
 
-        static void Draw(int x, int y, char sim)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(sim);
-        }
     }
 }
