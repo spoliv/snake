@@ -24,6 +24,27 @@ namespace Snake
 
             p2.Draw(p2.x, p2.y, p2.sym);
 
+            Point p3 = new Point(6, 8, '&');
+            Point p4 = new Point(9, 10, '@');
+
+
+            List<char> numList = new List<char>();
+            numList.Add('*');
+            numList.Add('#');
+            numList.Add('&');
+            numList.Add('@');
+
+            foreach(char i in numList)
+            {
+                Console.WriteLine(i);
+            }
+
+            List<Point> pList = new List<Point>();
+            pList.Add(p1);
+            pList.Add(p2);
+            pList.Add(p3);
+            pList.Add(p4);
+
             Console.ReadLine();
         }
 
