@@ -24,24 +24,37 @@ namespace Snake
             // Отрисовка точек
 
             Point p = new Point(4, 5, '*');
-            Snake snake = new Snake(p, 5, Direction.RIGHT);
+            Snake snake = new Snake(p, 6, Direction.RIGHT);
             snake.Drow();
 
-            while(true)
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
+
+            while (true)
             {
-                if(Console.KeyAvailable)
+                if(snake.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+
+                else
+                {
+                    snake.Move();
+                }
+
+                System.Threading.Thread.Sleep(300);
+
+                if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snake.HandleKey(key.Key);
-
                 }
-                System.Threading.Thread.Sleep(300);
-                snake.Move();
+
             }
           
-
             /*Console.ReadLine();*/
-
         }
     }
 }
