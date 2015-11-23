@@ -19,23 +19,5 @@ namespace Snake
             }
         }
 
-        //Перепишем метод Draw для класса HorizontalLine
-
-        public override void Draw()
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-
-            // Вместо этого можем написать base.Draw()
-
-            /*foreach(Point p in pList)
-            {
-                p.Draw();
-            }*/
-
-            base.Draw();
-
-            Console.ForegroundColor = ConsoleColor.White;
-        }
-
     }
 }
